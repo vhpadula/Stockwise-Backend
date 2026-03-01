@@ -1,22 +1,16 @@
 import uuid
-from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
-    BaseUserManager,
     PermissionsMixin,
+    BaseUserManager,
 )
-
-
-class UserRole(models.TextChoices):
-    ADMIN = "admin", "Admin"
-    MANAGER = "manager", "Manager"
-    STAFF = "staff", "Staff"
+from django.db import models
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, name, password=None, role="staff", **extra_fields):
+    def create_user(self, email, name, password=None, role="employee", **extra_fields):
         if not email:
-            raise ValueError("Email must be provided")
+            raise ValueError("Users must have an email address")
         email = self.normalize_email(email)
         user = self.model(email=email, name=name, role=role, **extra_fields)
         user.set_password(password)
@@ -30,17 +24,19 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    ROLE_CHOICES = [
+        ("admin", "Admin"),
+        ("manager", "Manager"),
+        ("employee", "Employee"),
+    ]
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    role = models.CharField(
-        max_length=20, choices=UserRole.choices, default=UserRole.STAFF
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    # Required for admin permissions
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="employee")
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     objects = UserManager()
 
@@ -48,4 +44,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ["name"]
 
     def __str__(self):
-        return self.email
+        return f"{self.name} ({self.email})"

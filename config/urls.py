@@ -21,8 +21,4 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/users/", include("users.urls")),  # Users auth endpoints
-    path("api/procurement/", include("procurement.urls")),
-    path("api/sales/", include("sales.urls")),
-    path("api/inventory/", include("inventory.urls")),
-    path("api/financials/", include("financials.urls")),
 ]
