@@ -81,7 +81,7 @@ APP_EXTERNAL_PORT=8000
 DB_EXTERNAL_PORT=5432
 ```
 
-4. **Run migrations**:
+4. **Run migrations** (note: you'll need a DB running at the specified port on the .env):
 
 ```bash
 python manage.py makemigrations
