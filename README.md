@@ -1,4 +1,4 @@
-# 📦 Stockwise
+# 📦 Stockwise-Backend
 
 Stockwise is a **lot-based inventory management system** for **Food & Beverage CPG brands**, tracking products, purchase orders, sales, and profits.
 It uses **Django + PostgreSQL + DRF** and supports **FIFO stock management**.
@@ -177,7 +177,3 @@ docker compose down
 - Implement frontend to consume API
 - Extend reporting dashboard for profits per product
 - Add automatic stock expiration alerts
-
----
-
-Do you want me to **also create a shorter “quick start” version** for interview submission that’s only 1–2 minutes to get it running? This often makes a great impression.
