@@ -95,11 +95,16 @@ class PurchaseOrderViewSet(viewsets.ModelViewSet):
 
 class PurchaseOrderItemViewSet(viewsets.ModelViewSet):
     serializer_class = PurchaseOrderItemSerializer
+    filterset_fields = ["purchase_order"]
 
     def get_queryset(self):
-        return PurchaseOrderItem.objects.for_user(self.request.user).order_by(
+        queryset = PurchaseOrderItem.objects.for_user(self.request.user).order_by(
             "-created_at"
         )
+        purchase_order_id = self.request.query_params.get("purchase_order")
+        if purchase_order_id:
+            queryset = queryset.filter(purchase_order_id=purchase_order_id)
+        return queryset
 
     def perform_create(self, serializer):
         po_id = self.request.data.get("purchase_order")
