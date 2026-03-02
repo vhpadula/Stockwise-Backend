@@ -23,7 +23,7 @@ stockwise-backend/
 │
 ├── config/               # Django settings
 ├── inventory/            # Product & Stock models
-├── procurement/          # Purchase Orders
+├── purchases/          # Purchase Orders
 ├── sales/                # Sales Orders
 ├── users/                # Custom user model
 │
