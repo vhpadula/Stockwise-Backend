@@ -2,8 +2,13 @@
 from rest_framework import viewsets, filters, status
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Product, Stock
-from .serializers import ProductSerializer, StockSerializer
+from .serializers import (
+    ProductSerializer,
+    StockMetadataUpdateSerializer,
+    StockSerializer,
+)
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -12,11 +17,9 @@ class ProductViewSet(viewsets.ModelViewSet):
     search_fields = ["name", "sku", "base_unit"]
 
     def get_queryset(self):
-        # Use the custom manager to filter by current user
         return Product.objects.for_user(self.request.user).order_by("name")
 
     def perform_create(self, serializer):
-        # Automatically set created_by to current user
         serializer.save(created_by=self.request.user)
 
     def perform_update(self, serializer):
@@ -32,31 +35,27 @@ class ProductViewSet(viewsets.ModelViewSet):
         return super().destroy(request, *args, **kwargs)
 
 
-class StockViewSet(viewsets.ModelViewSet):
-    serializer_class = StockSerializer
+class StockViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = [
         filters.SearchFilter,
         filters.OrderingFilter,
-        filters.DjangoFilterBackend,
+        DjangoFilterBackend,
     ]
     search_fields = ["lot_number", "product__name"]
     filterset_fields = ["expiration_date", "product"]
+    ordering_fields = ["created_at", "expiration_date"]
 
     def get_queryset(self):
-        # Use the custom manager to filter by current user
-        return Stock.objects.for_user(self.request.user).order_by("-created_at")
+        return (
+            Stock.objects.select_related("product")
+            .for_user(self.request.user)
+            .order_by("-created_at")
+        )
 
-    def perform_create(self, serializer):
-        serializer.save(created_by=self.request.user)
+    def get_serializer_class(self):
+        if self.action == "partial_update":
+            return StockMetadataUpdateSerializer
+        return StockSerializer
 
-    def perform_update(self, serializer):
-        serializer.save(created_by=self.request.user)
-
-    def destroy(self, request, *args, **kwargs):
-        stock = self.get_object()
-        if stock.remaining_quantity > 0:
-            return Response(
-                {"error": "Cannot delete stock with remaining quantity."},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-        return super().destroy(request, *args, **kwargs)
+    def partial_update(self, request, *args, **kwargs):
+        return super().partial_update(request, *args, **kwargs)

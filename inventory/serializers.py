@@ -4,20 +4,32 @@ from .models import Product, Stock
 
 
 class StockSerializer(serializers.ModelSerializer):
+    product_name = serializers.CharField(source="product.name", read_only=True)
+
     class Meta:
         model = Stock
-        fields = [
+        fields = "__all__"
+        read_only_fields = [
             "id",
             "product",
             "purchase_order_item",
             "initial_quantity",
             "remaining_quantity",
             "unit_cost",
-            "lot_number",
-            "expiration_date",
             "created_at",
         ]
-        read_only_fields = ["id", "created_at"]
+
+
+class StockMetadataUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stock
+        fields = ["lot_number", "expiration_date"]
+
+    def validate(self, attrs):
+        # Prevent empty patch
+        if not attrs:
+            raise serializers.ValidationError("No valid fields provided.")
+        return attrs
 
 
 class ProductSerializer(serializers.ModelSerializer):

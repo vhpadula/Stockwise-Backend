@@ -1,0 +1,397 @@
+{
+  "info": {
+    "_postman_id": "2e8bd46d-286a-4928-9416-a46a83a2e6b4",
+    "name": "Stockwise API",
+    "description": "Postman collection for Stockwise inventory management system. Includes JWT auth, lot-based inventory, FIFO sales, and financial dashboards.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47831885",
+    "_collection_link": "https://go.postman.co/collection/47831885-2e8bd46d-286a-4928-9416-a46a83a2e6b4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login (Token)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"secret\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/token/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "token", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refresh\": \"<refresh_token>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/token/refresh/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "token", "refresh", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice\",\n  \"email\": \"alice@example.com\",\n  \"password\": \"secret\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/register/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "register", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/users/me/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "me", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "Products",
+          "item": [
+            {
+              "name": "List Products",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/inventory/products?search=",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products"],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "",
+                      "description": "Optional filter by name, SKU, or unit"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Create Product",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Whole Milk\",\n    \"description\": \"Fresh whole milk 1L\",\n    \"sku\": \"MILK-001\",\n    \"base_unit\": \"L\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/inventory/products/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Retrieve Product",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Product",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Sliced Beef\",\n    \"base_unit\": \"kg\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Product",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            }
+          ],
+          "description": "CRUD endpoints for Products"
+        },
+        {
+          "name": "Stocks",
+          "item": [
+            {
+              "name": "List Stocks",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/stocks?product=&expiration_date=",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks"],
+                  "query": [
+                    {
+                      "key": "product",
+                      "value": "",
+                      "description": "Optional filter by product UUID"
+                    },
+                    {
+                      "key": "expiration_date",
+                      "value": "",
+                      "description": "Optional filter by expiration date (YYYY-MM-DD)"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Retrieve Stock",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/stocks/<uuid:id>",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks", "<uuid:id>"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Stock Metadata (PATCH Only)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lot_number\": \"LOT-002\",\n  \"expiration_date\": \"2026-07-15\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/stocks/<uuid:id>",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks", "<uuid:id>"]
+                }
+              },
+              "response": []
+            }
+          ],
+          "description": "Lot-based inventory (Read-only + metadata update only)"
+        }
+      ]
+    }
+  ]
+}
