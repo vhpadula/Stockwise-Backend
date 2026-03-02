@@ -1,5 +1,6 @@
 # inventory/views.py
 from rest_framework import viewsets, filters, status
+from rest_framework.mixins import UpdateModelMixin
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
@@ -35,7 +36,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         return super().destroy(request, *args, **kwargs)
 
 
-class StockViewSet(viewsets.ReadOnlyModelViewSet):
+class StockViewSet(UpdateModelMixin, viewsets.ReadOnlyModelViewSet):
     filter_backends = [
         filters.SearchFilter,
         filters.OrderingFilter,
@@ -47,8 +48,8 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         return (
-            Stock.objects.select_related("product")
-            .for_user(self.request.user)
+            Stock.objects.for_user(self.request.user)
+            .select_related("product")
             .order_by("-created_at")
         )
 
