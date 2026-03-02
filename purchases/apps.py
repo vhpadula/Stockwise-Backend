@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ProcurementConfig(AppConfig):
+class PurchasesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'procurement'
+    name = 'purchases'

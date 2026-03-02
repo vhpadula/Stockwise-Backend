@@ -27,15 +27,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/token/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "token",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "token", ""]
             }
           },
           "response": []
@@ -56,16 +49,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/token/refresh/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "token",
-                "refresh",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "token", "refresh", ""]
             }
           },
           "response": []
@@ -91,15 +76,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/register/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "register",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "register", ""]
             }
           },
           "response": []
@@ -127,15 +105,8 @@
             ],
             "url": {
               "raw": "{{base_url}}/api/users/me/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "me",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "me", ""]
             }
           },
           "response": []
@@ -171,14 +142,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products?search=",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products"
-                  ],
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products"],
                   "query": [
                     {
                       "key": "search",
@@ -217,15 +182,8 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", ""]
                 }
               },
               "response": []
@@ -253,16 +211,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -294,16 +244,8 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -331,16 +273,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -374,14 +308,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/stocks?product=&expiration_date=",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "stocks"
-                  ],
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stocks"],
                   "query": [
                     {
                       "key": "product",
@@ -421,14 +349,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/stocks/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "stocks",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -460,16 +382,8 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/inventory/stocks/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "stocks",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stocks", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -503,14 +417,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/stock-movements?product=&stock=&sales_order_item=&date_from=&date_to=",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "stock-movements"
-                  ],
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stock-movements"],
                   "query": [
                     {
                       "key": "product",
@@ -565,15 +473,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/stock-movements/<uuid:id>",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "stock-movements",
-                    "<uuid:id>"
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stock-movements", "<uuid:id>"]
                 }
               },
               "response": []
@@ -584,10 +485,10 @@
       ]
     },
     {
-      "name": "Procurement",
+      "name": "Purchases",
       "item": [
         {
-          "name": "Purchase Orders",
+          "name": "Orders",
           "item": [
             {
               "name": "List Purchase Orders",
@@ -605,16 +506,9 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/orders/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "orders", ""]
                 }
               },
               "response": []
@@ -644,16 +538,9 @@
                   "raw": "{\n  \"supplier_name\": \"Acme Dairy\",\n  \"order_date\": \"2026-03-01\"\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/orders/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "orders", ""]
                 }
               },
               "response": []
@@ -674,16 +561,9 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    "<uuid:id>"
-                  ]
+                  "raw": "{{base_url}}/api/purchases/orders/<uuid:id>",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "orders", "<uuid:id>"]
                 }
               },
               "response": []
@@ -713,17 +593,9 @@
                   "raw": "{\n  \"supplier_name\": \"Acme Organic Dairy\"\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/orders/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "orders", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -744,17 +616,9 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/orders/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "orders", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -775,14 +639,12 @@
                 "method": "POST",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/confirm/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "raw": "{{base_url}}/api/purchases/orders/<uuid:id>/confirm/",
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
-                    "procurement",
-                    "purchase-orders",
+                    "purchases",
+                    "orders",
                     "<uuid:id>",
                     "confirm",
                     ""
@@ -807,14 +669,12 @@
                 "method": "POST",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/receive/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "raw": "{{base_url}}/api/purchases/orders/<uuid:id>/receive/",
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
-                    "procurement",
-                    "purchase-orders",
+                    "purchases",
+                    "orders",
                     "<uuid:id>",
                     "receive",
                     ""
@@ -839,14 +699,12 @@
                 "method": "POST",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/cancel/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "raw": "{{base_url}}/api/purchases/orders/<uuid:id>/cancel/",
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
-                    "procurement",
-                    "purchase-orders",
+                    "purchases",
+                    "orders",
                     "<uuid:id>",
                     "cancel",
                     ""
@@ -859,7 +717,7 @@
           "description": "Manage purchase orders and lifecycle actions"
         },
         {
-          "name": "Purchase Order Items",
+          "name": "Items",
           "item": [
             {
               "name": "List Items by Purchase Order",
@@ -877,15 +735,9 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-order-items?purchase_order=<uuid:po_id>",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-order-items"
-                  ],
+                  "raw": "{{base_url}}/api/purchases/items?purchase_order=<uuid:po_id>",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "items"],
                   "query": [
                     {
                       "key": "purchase_order",
@@ -922,16 +774,9 @@
                   "raw": "{\n  \"purchase_order\": \"70a8e909-38ab-4ad1-bb55-91019a508374\",\n  \"product\": \"ec6bccb6-91f4-4298-8f67-270f1706bb6b\",\n  \"quantity\": 150,\n  \"unit_cost\": 95.50,\n  \"lot_number\": \"MILK-1\",\n  \"expiration_date\": \"2026-06-30\"\n\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-order-items/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-order-items",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/items/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "items", ""]
                 }
               },
               "response": []
@@ -952,17 +797,9 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-order-items",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "items", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -992,17 +829,9 @@
                   "raw": "{\n  \"quantity\": 120,\n  \"unit_cost\": 50\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-order-items",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "items", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -1023,17 +852,9 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-order-items",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/purchases/items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "purchases", "items", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -1047,7 +868,7 @@
       "name": "Sales",
       "item": [
         {
-          "name": "Sales Orders",
+          "name": "Orders",
           "item": [
             {
               "name": "List Sales Orders",
@@ -1070,15 +891,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-orders?customer_name=&status=",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-orders"
-                  ],
+                  "raw": "{{base_url}}/api/sales/orders?customer_name=&status=",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "orders"],
                   "query": [
                     {
                       "key": "customer_name",
@@ -1120,16 +935,9 @@
                   "raw": "{\n  \"customer_name\": \"John Doe\",\n  \"order_date\": \"2026-03-01\"\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-orders/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-orders",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/orders/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "orders", ""]
                 }
               },
               "response": []
@@ -1155,17 +963,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-orders",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/orders/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "orders", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -1195,17 +995,9 @@
                   "raw": "{\n  \"customer_name\": \"Jane Doe\"\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-orders",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/orders/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "orders", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -1231,18 +1023,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/confirm/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-orders",
-                    "<uuid:id>",
-                    "confirm",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/orders/<uuid:id>/confirm/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "orders", "<uuid:id>", "confirm", ""]
                 }
               },
               "response": []
@@ -1268,18 +1051,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/fulfill/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-orders",
-                    "<uuid:id>",
-                    "fulfill",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/orders/<uuid:id>/fulfill/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "orders", "<uuid:id>", "fulfill", ""]
                 }
               },
               "response": []
@@ -1305,18 +1079,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/cancel/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-orders",
-                    "<uuid:id>",
-                    "cancel",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/orders/<uuid:id>/cancel/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "orders", "<uuid:id>", "cancel", ""]
                 }
               },
               "response": []
@@ -1325,7 +1090,7 @@
           "description": "Manage sales orders (draft, confirmed, fulfilled, cancelled)"
         },
         {
-          "name": "Sales Order Items",
+          "name": "Items",
           "item": [
             {
               "name": "List Items by Sales Order",
@@ -1343,15 +1108,9 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-order-items?sales_order=<uuid:id>",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-order-items"
-                  ],
+                  "raw": "{{base_url}}/api/sales/items?sales_order=<uuid:id>",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "items"],
                   "query": [
                     {
                       "key": "sales_order",
@@ -1387,16 +1146,9 @@
                   "raw": "{\n  \"sales_order\": \"482728a3-acbb-4bf3-80af-a2c0e0fb40f5\",\n  \"product\": \"ec6bccb6-91f4-4298-8f67-270f1706bb6b\",\n  \"quantity\": 50,\n  \"unit_price\": 200\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-order-items/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-order-items",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/items/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "items", ""]
                 }
               },
               "response": []
@@ -1422,17 +1174,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-order-items",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "items", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -1462,17 +1206,9 @@
                   "raw": "{\n  \"quantity\": 15,\n  \"unit_price\": 6.00\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-order-items",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "items", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -1498,17 +1234,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/sales/sales-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "sales",
-                    "sales-order-items",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "raw": "{{base_url}}/api/sales/items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "items", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -1545,14 +1273,8 @@
             ],
             "url": {
               "raw": "{{base_url}}/api/financials/summary?date_from=&date_to=",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "financials",
-                "summary"
-              ],
+              "host": ["{{base_url}}"],
+              "path": ["api", "financials", "summary"],
               "query": [
                 {
                   "key": "date_from",
@@ -1592,14 +1314,8 @@
             ],
             "url": {
               "raw": "{{base_url}}/api/financials/products?product=&date_from=&date_to=",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "financials",
-                "products"
-              ],
+              "host": ["{{base_url}}"],
+              "path": ["api", "financials", "products"],
               "query": [
                 {
                   "key": "product",
@@ -1644,15 +1360,8 @@
             ],
             "url": {
               "raw": "{{base_url}}/api/financials/timeline/?product=&group_by=day&date_from=2026-01-01",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "financials",
-                "timeline",
-                ""
-              ],
+              "host": ["{{base_url}}"],
+              "path": ["api", "financials", "timeline", ""],
               "query": [
                 {
                   "key": "product",
@@ -1696,14 +1405,8 @@
             ],
             "url": {
               "raw": "{{base_url}}/api/financials/top-products?limit=5&date_from=&date_to=",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "financials",
-                "top-products"
-              ],
+              "host": ["{{base_url}}"],
+              "path": ["api", "financials", "top-products"],
               "query": [
                 {
                   "key": "limit",

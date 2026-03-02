@@ -47,7 +47,7 @@ class Stock(models.Model):
         Product, on_delete=models.CASCADE, related_name="stocks"
     )
     purchase_order_item = models.ForeignKey(
-        "procurement.PurchaseOrderItem",
+        "purchases.PurchaseOrderItem",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,

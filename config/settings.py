@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "users",
     "inventory",
-    "procurement",
+    "purchases",
     "sales",
+    "financials",
 ]
 
 REST_FRAMEWORK = {

@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from django.db.models import Sum, F
 from inventory.models import Product, StockMovement, Stock
 from sales.models import SalesOrderItem
-from procurement.models import PurchaseOrderItem
+from purchases.models import PurchaseOrderItem
 from .serializers import (
     FinancialSummarySerializer,
     ProductFinancialSerializer,
