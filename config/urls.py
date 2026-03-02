@@ -21,4 +21,5 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/users/", include("users.urls")),  # Users auth endpoints
+    path("api/inventory/", include("inventory.urls")),  # Inventory endpoints
 ]

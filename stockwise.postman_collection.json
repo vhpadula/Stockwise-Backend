@@ -97,94 +97,167 @@
       "name": "Inventory",
       "item": [
         {
-          "name": "List Products",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer <access_token>",
-                "type": "text"
+          "name": "Products",
+          "description": "CRUD endpoints for Products",
+          "item": [
+            {
+              "name": "List Products",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/products/?search=",
+                  "host": ["{{base_url}}"],
+                  "path": ["products"],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "",
+                      "description": "Optional filter by name, SKU, or unit"
+                    }
+                  ]
+                }
               }
-            ],
-            "url": {
-              "raw": "http://localhost:8000/api/inventory/products/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "8000",
-              "path": ["api", "inventory", "products", ""]
-            }
-          }
-        },
-        {
-          "name": "Create Product",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer <access_token>",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Milk\",\n  \"description\": \"1L full cream\",\n  \"sku\": \"MILK001\",\n  \"base_unit\": \"L\"\n}",
-              "options": { "raw": { "language": "json" } }
             },
-            "url": {
-              "raw": "http://localhost:8000/api/inventory/products/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "8000",
-              "path": ["api", "inventory", "products", ""]
-            }
-          }
-        },
-        {
-          "name": "List Stocks",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer <access_token>",
-                "type": "text"
+            {
+              "name": "Create Product",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Whole Milk\",\n    \"description\": \"Fresh whole milk 1L\",\n    \"sku\": \"MILK-001\",\n    \"base_unit\": \"L\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/products/",
+                  "host": ["{{base_url}}"],
+                  "path": ["products"]
+                }
               }
-            ],
-            "url": {
-              "raw": "http://localhost:8000/api/inventory/stocks/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "8000",
-              "path": ["api", "inventory", "stocks", ""]
-            }
-          }
-        },
-        {
-          "name": "Add Stock Lot",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer <access_token>",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"product\": \"<product_id>\",\n  \"initial_quantity\": 100,\n  \"unit_cost\": 1.5,\n  \"lot_number\": \"LOT001\",\n  \"expiration_date\": \"2026-06-01\"\n}",
-              "options": { "raw": { "language": "json" } }
             },
-            "url": {
-              "raw": "http://localhost:8000/api/inventory/stocks/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "8000",
-              "path": ["api", "inventory", "stocks", ""]
+            {
+              "name": "Retrieve Product",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/products/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["products", "<uuid:id>"]
+                }
+              }
+            },
+            {
+              "name": "Update Product",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Organic Whole Milk\",\n    \"base_unit\": \"L\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/products/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["products", "<uuid:id>"]
+                }
+              }
+            },
+            {
+              "name": "Delete Product",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/products/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["products", "<uuid:id>"]
+                }
+              }
             }
-          }
+          ]
+        },
+        {
+          "name": "Stocks",
+          "description": "CRUD endpoints for Stocks",
+          "item": [
+            {
+              "name": "List Stocks",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/stocks/",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks"]
+                }
+              }
+            },
+            {
+              "name": "Create Stock",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"product\": \"<product_uuid>\",\n  \"initial_quantity\": 100,\n  \"remaining_quantity\": 100,\n  \"unit_cost\": 5.50,\n  \"lot_number\": \"LOT-001\",\n  \"expiration_date\": \"2026-06-30\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/stocks/",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks"]
+                }
+              }
+            },
+            {
+              "name": "Retrieve Stock",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/stocks/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks", "<uuid:id>"]
+                }
+              }
+            },
+            {
+              "name": "Update Stock",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lot_number\": \"LOT-002\",\n  \"expiration_date\": \"2026-07-15\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/stocks/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks", "<uuid:id>"]
+                }
+              }
+            },
+            {
+              "name": "Delete Stock",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/stocks/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks", "<uuid:id>"]
+                }
+              }
+            }
+          ]
         }
       ]
     },

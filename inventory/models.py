@@ -3,6 +3,13 @@ from django.db import models
 from users.models import User
 
 
+class ProductManager(models.Manager):
+    def for_user(self, user):
+        if not user or not user.is_authenticated:
+            return self.none()
+        return self.filter(created_by=user)
+
+
 class Product(models.Model):
     UNIT_CHOICES = [
         ("g", "Gram"),
@@ -17,11 +24,21 @@ class Product(models.Model):
     description = models.TextField()
     sku = models.CharField(max_length=100, unique=True)
     base_unit = models.CharField(max_length=10, choices=UNIT_CHOICES)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    objects = ProductManager()
+
     def __str__(self):
         return self.name
+
+
+class StockManager(models.Manager):
+    def for_user(self, user):
+        if not user or not user.is_authenticated:
+            return self.none()
+        return self.filter(created_by=user)
 
 
 class Stock(models.Model):
@@ -40,7 +57,17 @@ class Stock(models.Model):
     unit_cost = models.DecimalField(max_digits=10, decimal_places=2)
     lot_number = models.CharField(max_length=100, null=True, blank=True)
     expiration_date = models.DateField(null=True, blank=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    objects = StockManager()
+
+
+class StockMovementManager(models.Manager):
+    def for_user(self, user):
+        if not user or not user.is_authenticated:
+            return self.none()
+        return self.filter(created_by=user)
 
 
 class StockMovement(models.Model):
@@ -51,4 +78,7 @@ class StockMovement(models.Model):
     )
     quantity = models.DecimalField(max_digits=12, decimal_places=3)
     cost_per_unit = models.DecimalField(max_digits=10, decimal_places=2)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    objects = StockMovementManager()
