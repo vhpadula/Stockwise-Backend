@@ -170,10 +170,3 @@ docker compose down
 - Profit is calculated from **StockMovement (COGS)**
 - FIFO strategy is applied when selling products
 
----
-
-## 📌 Next Steps
-
-- Implement frontend to consume API
-- Extend reporting dashboard for profits per product
-- Add automatic stock expiration alerts
