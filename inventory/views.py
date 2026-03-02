@@ -34,6 +34,13 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 class StockViewSet(viewsets.ModelViewSet):
     serializer_class = StockSerializer
+    filter_backends = [
+        filters.SearchFilter,
+        filters.OrderingFilter,
+        filters.DjangoFilterBackend,
+    ]
+    search_fields = ["lot_number", "product__name"]
+    filterset_fields = ["expiration_date", "product"]
 
     def get_queryset(self):
         # Use the custom manager to filter by current user
