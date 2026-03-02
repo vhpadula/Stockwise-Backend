@@ -1,6 +1,6 @@
 # inventory/serializers.py
 from rest_framework import serializers
-from .models import Product, Stock
+from .models import Product, Stock, StockMovement
 
 
 class StockSerializer(serializers.ModelSerializer):
@@ -67,3 +67,14 @@ class ProductSerializer(serializers.ModelSerializer):
             return StockSerializer(user_stocks, many=True).data
         # fallback: empty list if no user
         return []
+
+
+class StockMovementSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StockMovement
+        fields = "__all__"
+        read_only_fields = [
+            "id",
+            "created_by",
+            "created_at",
+        ]

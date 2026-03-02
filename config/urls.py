@@ -23,4 +23,5 @@ urlpatterns = [
     path("api/users/", include("users.urls")),  # Users auth endpoints
     path("api/inventory/", include("inventory.urls")),  # Inventory endpoints
     path("api/procurement/", include("procurement.urls")),  # Procurement endpoints
+    path("api/sales/", include("sales.urls")),  # Sales endpoints
 ]

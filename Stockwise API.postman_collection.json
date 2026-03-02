@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "f1a4f08f-05e4-48bd-bc1c-627f8ea63b30",
+    "_postman_id": "a69215d5-6009-4c30-b30d-9c704574b684",
     "name": "Stockwise API",
     "description": "Postman collection for Stockwise inventory management system. Includes JWT auth, lot-based inventory, FIFO sales, and financial dashboards.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "47831885",
-    "_collection_link": "https://go.postman.co/collection/47831885-f1a4f08f-05e4-48bd-bc1c-627f8ea63b30?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/47831885-a69215d5-6009-4c30-b30d-9c704574b684?source=collection_link"
   },
   "item": [
     {
@@ -27,15 +27,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/token/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "token",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "token", ""]
             }
           },
           "response": []
@@ -56,16 +49,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/token/refresh/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "token",
-                "refresh",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "token", "refresh", ""]
             }
           },
           "response": []
@@ -91,15 +76,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/register/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "register",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "register", ""]
             }
           },
           "response": []
@@ -127,15 +105,8 @@
             ],
             "url": {
               "raw": "{{base_url}}/api/users/me/",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "me",
-                ""
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "me", ""]
             }
           },
           "response": []
@@ -171,14 +142,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products?search=",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products"
-                  ],
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products"],
                   "query": [
                     {
                       "key": "search",
@@ -217,15 +182,8 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", ""]
                 }
               },
               "response": []
@@ -253,16 +211,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -294,16 +244,8 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -331,16 +273,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/products/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "products",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "products", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -374,14 +308,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/api/inventory/stocks?product=&expiration_date=",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "stocks"
-                  ],
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stocks"],
                   "query": [
                     {
                       "key": "product",
@@ -421,14 +349,8 @@
                 ],
                 "url": {
                   "raw": "{{base_url}}/stocks/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "stocks",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["stocks", "<uuid:id>", ""]
                 }
               },
               "response": []
@@ -460,22 +382,105 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/inventory/stocks/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "inventory",
-                    "stocks",
-                    "<uuid:id>",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stocks", "<uuid:id>", ""]
                 }
               },
               "response": []
             }
           ],
           "description": "Lot-based inventory (Read-only + metadata update only)"
+        },
+        {
+          "name": "Stock Movements",
+          "description": "Read-only endpoints for stock movements. Supports filtering by product, stock, sales order item, and date range.",
+          "item": [
+            {
+              "name": "List Stock Movements",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/inventory/stock-movements/?product=&stock=&sales_order_item=&date_from=&date_to=",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stock-movements"],
+                  "query": [
+                    {
+                      "key": "product",
+                      "value": "",
+                      "description": "Optional filter by product UUID"
+                    },
+                    {
+                      "key": "stock",
+                      "value": "",
+                      "description": "Optional filter by stock UUID"
+                    },
+                    {
+                      "key": "sales_order_item",
+                      "value": "",
+                      "description": "Optional filter by sales order item UUID"
+                    },
+                    {
+                      "key": "date_from",
+                      "value": "",
+                      "description": "Optional filter by start date (YYYY-MM-DD)"
+                    },
+                    {
+                      "key": "date_to",
+                      "value": "",
+                      "description": "Optional filter by end date (YYYY-MM-DD)"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Retrieve Stock Movement",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/inventory/stock-movements/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inventory", "stock-movements", "<uuid:id>"]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     },
@@ -502,15 +507,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "procurement", "purchase-orders", ""]
                 }
               },
               "response": []
@@ -541,15 +539,8 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    ""
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "procurement", "purchase-orders", ""]
                 }
               },
               "response": []
@@ -571,15 +562,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-orders",
-                    "<uuid:id>"
-                  ]
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "procurement", "purchase-orders", "<uuid:id>"]
                 }
               },
               "response": []
@@ -610,9 +594,7 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -641,9 +623,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -672,9 +652,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/confirm/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -704,9 +682,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/receive/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -736,9 +712,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-orders/<uuid:id>/cancel/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -774,14 +748,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-order-items?purchase_order=<uuid:po_id>",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-order-items"
-                  ],
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "procurement", "purchase-order-items"],
                   "query": [
                     {
                       "key": "purchase_order",
@@ -815,18 +783,12 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"purchase_order\": \"<uuid:po_id>\",\n  \"product\": \"<uuid:product_id>\",\n  \"quantity\": 100,\n  \"unit_cost\": 5.50\n}"
+                  "raw": "{\n  \"purchase_order\": \"70a8e909-38ab-4ad1-bb55-91019a508374\",\n  \"product\": \"ec6bccb6-91f4-4298-8f67-270f1706bb6b\",\n  \"quantity\": 150,\n  \"unit_cost\": 95.50,\n  \"lot_number\": \"MILK-1\",\n  \"expiration_date\": \"2026-06-30\"\n\n}"
                 },
                 "url": {
-                  "raw": "{{base_url}}/api/procurement/purchase-order-items",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "procurement",
-                    "purchase-order-items"
-                  ]
+                  "raw": "{{base_url}}/api/procurement/purchase-order-items/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "procurement", "purchase-order-items", ""]
                 }
               },
               "response": []
@@ -848,9 +810,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -888,9 +848,7 @@
                 },
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -919,9 +877,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/procurement/purchase-order-items/<uuid:id>/",
-                  "host": [
-                    "{{base_url}}"
-                  ],
+                  "host": ["{{base_url}}"],
                   "path": [
                     "api",
                     "procurement",
@@ -937,6 +893,410 @@
           "description": "Manage items of purchase orders (draft only)"
         }
       ]
+    },
+    {
+      "name": "Sales",
+      "item": [
+        {
+          "name": "Sales Orders",
+          "item": [
+            {
+              "name": "List Sales Orders",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-orders?customer_name=&status=",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-orders"],
+                  "query": [
+                    {
+                      "key": "customer_name",
+                      "value": "",
+                      "description": "Filter by customer"
+                    },
+                    {
+                      "key": "status",
+                      "value": "",
+                      "description": "Filter by order status"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Create Sales Order",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_name\": \"John Doe\",\n  \"order_date\": \"2026-03-01\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-orders/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-orders", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Retrieve Sales Order",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-orders", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Sales Order",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_name\": \"Jane Doe\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-orders", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Confirm Sales Order",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/confirm/",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "sales",
+                    "sales-orders",
+                    "<uuid:id>",
+                    "confirm",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Fulfill Sales Order",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/fulfill/",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "sales",
+                    "sales-orders",
+                    "<uuid:id>",
+                    "fulfill",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Cancel Sales Order",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-orders/<uuid:id>/cancel/",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "sales",
+                    "sales-orders",
+                    "<uuid:id>",
+                    "cancel",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "description": "Manage sales orders (draft, confirmed, fulfilled, cancelled)"
+        },
+        {
+          "name": "Sales Order Items",
+          "item": [
+            {
+              "name": "List Items by Sales Order",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-order-items?sales_order=<uuid:id>",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-order-items"],
+                  "query": [
+                    {
+                      "key": "sales_order",
+                      "value": "<uuid:id>"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Add Sales Order Item",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sales_order\": \"482728a3-acbb-4bf3-80af-a2c0e0fb40f5\",\n  \"product\": \"ec6bccb6-91f4-4298-8f67-270f1706bb6b\",\n  \"quantity\": 50,\n  \"unit_price\": 200\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-order-items/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-order-items", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Retrieve Sales Order Item",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-order-items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-order-items", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Sales Order Item",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": 15,\n  \"unit_price\": 6.00\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-order-items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-order-items", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Sales Order Item",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/sales/sales-order-items/<uuid:id>/",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "sales", "sales-order-items", "<uuid:id>", ""]
+                }
+              },
+              "response": []
+            }
+          ],
+          "description": "Manage items within sales orders"
+        }
+      ],
+      "description": "Endpoints for Sales Orders and Sales Order Items with FIFO stock deduction"
     }
   ]
 }
