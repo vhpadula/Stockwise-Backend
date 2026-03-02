@@ -23,7 +23,7 @@ stockwise-backend/
 │
 ├── config/               # Django settings
 ├── inventory/            # Product & Stock models
-├── purchases/          # Purchase Orders
+├── purchases/            # Purchase Orders
 ├── sales/                # Sales Orders
 ├── users/                # Custom user model
 │
@@ -158,8 +158,7 @@ docker compose down
 
 - Uses **custom user model** (`users.User`)
 - JWT-based authentication via DRF
-- Object-level permissions ensure users only access **their own purchase and sales orders**
-- Role-based access (`admin`, `manager`, `staff`)
+- Object-level permissions ensure users only access **their own inventory, purchase and sales orders**
 
 ---
 
