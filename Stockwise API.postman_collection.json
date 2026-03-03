@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "627545aa-5bef-43fd-b86a-6b94bc810dc1",
+    "_postman_id": "c9f7f70b-af01-430e-beb6-6d4a384e243a",
     "name": "Stockwise API",
     "description": "Postman collection for Stockwise inventory management system. Includes JWT auth, lot-based inventory, FIFO sales, and financial dashboards.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "47831885",
-    "_collection_link": "https://go.postman.co/collection/47831885-627545aa-5bef-43fd-b86a-6b94bc810dc1?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/47831885-c9f7f70b-af01-430e-beb6-6d4a384e243a?source=collection_link"
   },
   "item": [
     {
@@ -502,7 +502,7 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{base_url}}/api/inventory/stock-movements?product=&stock=&sales_order_item=&date_from=&date_to=",
+                  "raw": "{{base_url}}/api/inventory/stock-movements?stock__product=&stock=&sales_order_item=&date_from=&date_to=",
                   "host": [
                     "{{base_url}}"
                   ],
@@ -513,29 +513,24 @@
                   ],
                   "query": [
                     {
-                      "key": "product",
-                      "value": "",
-                      "description": "Optional filter by product UUID"
+                      "key": "stock__product",
+                      "value": ""
                     },
                     {
                       "key": "stock",
-                      "value": "",
-                      "description": "Optional filter by stock UUID"
+                      "value": ""
                     },
                     {
                       "key": "sales_order_item",
-                      "value": "",
-                      "description": "Optional filter by sales order item UUID"
+                      "value": ""
                     },
                     {
                       "key": "date_from",
-                      "value": "",
-                      "description": "Optional filter by start date (YYYY-MM-DD)"
+                      "value": ""
                     },
                     {
                       "key": "date_to",
-                      "value": "",
-                      "description": "Optional filter by end date (YYYY-MM-DD)"
+                      "value": ""
                     }
                   ]
                 }
