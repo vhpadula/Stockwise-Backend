@@ -88,6 +88,18 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+I've also included a SQL Dump with examples for two separate users
+
+Alice
+
+- email: alice@example.com
+- password: secret
+
+and Bob
+
+- email: bob@example.com
+- password: secret
+
 5. **Create superuser**:
 
 ```bash
@@ -168,4 +180,3 @@ docker compose down
 - Inventory is **lot-based**
 - Profit is calculated from **StockMovement (COGS)**
 - FIFO strategy is applied when selling products
-
