@@ -163,6 +163,7 @@ docker compose down
 | `DB_EXTERNAL_PORT`  | Port mapped on host for Postgres                       |
 | `APP_INTERNAL_PORT` | Port Gunicorn listens to inside container              |
 | `APP_EXTERNAL_PORT` | Port exposed on host for Django API                    |
+| `FRONTEND_URL`      | Frontend URL for CORS Configuration                    |
 
 ---
 
